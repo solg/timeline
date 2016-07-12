@@ -31,7 +31,7 @@ require('./timeline-entry/timeline-entry.component')
     store.subscribe(() => {
       this.timeline = store.getState().timeline.timeline
       this.setEvenOdd()
-      this.update();
+      this.update()
     })
 
     this.showForm = false
@@ -41,9 +41,7 @@ require('./timeline-entry/timeline-entry.component')
       avatar: '/images/default-user-avatar.svg'
     }
 
-    this.timeline = [
-      //{ title: 'I got married', category: 'PERSONAL_LIFE', icon: 'ring', description: '', date: '06/28/2016' }
-    ]
+    this.timeline = []
 
     this.toggleForm = (e) => {
       this.showForm = !this.showForm
@@ -58,19 +56,16 @@ require('./timeline-entry/timeline-entry.component')
     this.addEvent = (entry) => {
       store.dispatch(actions.addEntry(entry));
 
-      // let last = this.timeline[0], align = 'left'
-      // if (last) align = last.align === 'left' ? 'right' : 'left'
-      // entry.align = align
-      // this.timeline.unshift(entry)
-      // this.showForm = false
-      // this.update()
+      this.showForm = false
+      this.update()
     }
 
     this.setEvenOdd = () => {
       this.timeline.map((entry, i) => {
-        entry.align = i % 2 === 0 ? 'left' : 'right'
+        if(!entry.align) {
+          entry.align = i % 2 === 0 ? 'left' : 'right'
+        }
       })
-      this.update()
     }
 
   </script>

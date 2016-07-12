@@ -1,6 +1,5 @@
 // component style
 require('./app.component.less')
-//import style from './app.component.less'
 
 // child components
 require('./navbar/navbar.component')
@@ -22,12 +21,13 @@ require('./settings/settings.component')
   </div>
 
   <script>
-    const actions = require('../actions/actions').default
+
+    const actions = require('../actions/actions').default //temporary work around
 
     let store = this.opts.store;
 
     this.on('mount', () => {
-      //store.dispatch(actions.loadTimeline());
+      //store.dispatch(anyAction);
     })
 
     store.subscribe(() => {
@@ -35,17 +35,6 @@ require('./settings/settings.component')
       // this.update();
     })
 
-    // this.handleNewTask = (task) => {
-    //   store.dispatch(actions.addTask(task));
-    // }
-    //
-    // this.handleTaskCompletionChange = (id, isComplete) => {
-    //   store.dispatch(actions.toggleComplete(id, isComplete));
-    // }
-    //
-    // this.hideErrorMessage = () => {
-    //   store.dispatch(actions.hideError());
-    // }
   </script>
 
 </app>
