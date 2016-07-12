@@ -1,0 +1,10 @@
+// component style
+require('./profile.component.less')
+
+<profile>
+
+  <div class="profile-container">
+    <h1>User Profile!</h1>
+  </div>
+
+</profile>

@@ -1,0 +1,51 @@
+// component style
+require('./app.component.less')
+//import style from './app.component.less'
+
+// child components
+require('./navbar/navbar.component')
+require('./app-header/app-header.component')
+require('./timeline/timeline.component')
+require('./profile/profile.component')
+require('./settings/settings.component')
+
+<app>
+
+  <div class="main">
+    <navbar></navbar>
+    <div class="main-container">
+      <div class="app-header">
+        <app-header></app-header>
+      </div>
+      <div class="app-content" id="view"></div>
+    </div>
+  </div>
+
+  <script>
+    const actions = require('../actions/actions').default
+
+    let store = this.opts.store;
+
+    this.on('mount', () => {
+      //store.dispatch(actions.loadTimeline());
+    })
+
+    store.subscribe(() => {
+      // this.state = store.getState();
+      // this.update();
+    })
+
+    // this.handleNewTask = (task) => {
+    //   store.dispatch(actions.addTask(task));
+    // }
+    //
+    // this.handleTaskCompletionChange = (id, isComplete) => {
+    //   store.dispatch(actions.toggleComplete(id, isComplete));
+    // }
+    //
+    // this.hideErrorMessage = () => {
+    //   store.dispatch(actions.hideError());
+    // }
+  </script>
+
+</app>

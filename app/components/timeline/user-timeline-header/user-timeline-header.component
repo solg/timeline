@@ -1,0 +1,33 @@
+// component style
+require('./user-timeline-header.component.less')
+
+// child components
+require('../add-event/add-event.component')
+
+<user-timeline-header>
+
+  <div class="user-timeline-header">
+    <div class="user-info">
+      <img src="{ opts.user.avatar }" />
+      <h3>{ opts.user.name }</h3>
+      <h4>{ opts.user.email }</h4>
+    </div>
+    <div class="user-action">
+      <span onclick={ parent.toggleForm } title="New Event">
+        <i class="{ ion-android-arrow-dropdown: !parent.showForm, ion-android-arrow-dropup: parent.showForm }"></i>
+      </span>
+    </div>
+    <div class="user-form" if={ parent.showForm }>
+      <add-event></add-event>
+    </div>
+  </div>
+
+  <script>
+
+    this.addEvent = (entry) => {
+      this.parent.addEvent(entry)
+    }
+
+  </script>
+
+</user-timeline-header>

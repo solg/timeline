@@ -1,0 +1,29 @@
+// component style
+require('./navbar.component.less')
+
+<navbar>
+
+  <a class="nav-item {selected: selected}" each={ navLinks } href="#/{ url }" onclick={ setSelected } >
+    <i class="{ icon }"></i>
+    <span>{ text }</span>
+  </a>
+
+  <script>
+
+    this.navLinks = [
+      { text: 'Home',     icon: 'ion-ios-home',        url: '', selected: true },
+      { text: 'Profile',  icon: 'ion-android-person',  url: 'profile' },
+      { text: 'Settings', icon: 'ion-ios-gear',        url: 'settings' }
+    ]
+
+    this.setSelected = (e) => {
+      this.navLinks.map((navLink) => {
+        navLink.selected = false;
+      })
+      e.item.selected = true
+      return true
+    }
+
+  </script>
+
+</navbar>

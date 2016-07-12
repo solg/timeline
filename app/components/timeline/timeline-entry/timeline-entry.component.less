@@ -1,0 +1,53 @@
+
+timeline-entry {
+
+  .timeline-entry {
+    box-shadow: 0 2px .3em #ccc;
+    padding: 1.5em;
+    width: 47%;
+    background-color: #fff;
+    font-size: 90%;
+    color: #777;
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    &.pull-left {
+      border-radius: 2px 0 2px 2px;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        right: -8px;
+        border-width: 0 0 8px 8px;
+        border-color: transparent transparent transparent #fff;
+      }
+    }
+
+    &.pull-right {
+      border-radius: 0 2px 2px 2px;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        left: -8px;
+        border-width: 0 8px 8px 0;
+        border-color: transparent #fff transparent transparent;
+      }
+    }
+
+  }
+
+}

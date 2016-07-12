@@ -1,0 +1,76 @@
+{
+  "timeline": [
+    {
+      "title": "1st event",
+      "description": "Desc.",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 1
+    },
+    {
+      "title": "2nd event",
+      "description": "desc 2.",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 2
+    },
+    {
+      "title": "3rd event",
+      "description": "sfdg",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 3
+    },
+    {
+      "title": "4th event",
+      "description": "adsfgh",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 4
+    },
+    {
+      "title": "Ok",
+      "description": "adghj",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 5
+    },
+    {
+      "title": "Al right",
+      "description": "asfdfh",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 6
+    },
+    {
+      "title": "Try",
+      "description": "test",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 7
+    },
+    {
+      "title": "Last one",
+      "description": "ok",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 8
+    },
+    {
+      "title": "sdf sdfs",
+      "description": "sdfsf",
+      "category": "PERSONAL_LIFE",
+      "icon": "ring",
+      "date": "06/28/2016",
+      "id": 9
+    }
+  ]
+}

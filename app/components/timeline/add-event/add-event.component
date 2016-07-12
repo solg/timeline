@@ -1,0 +1,26 @@
+// component style
+require('./add-event.component.less')
+
+<add-event>
+  <form onsubmit={ addEvent }>
+    <h3>New Event</h3>
+    <input id="eventTitle" type="text" placeholder="Title" class="form-control" >
+    <input id="eventDescription" type="text" placeholder="Description" class="form-control" >
+    <button type="submit" class="btn btn-default"> Add </button>
+  </form>
+
+  <script>
+
+    this.addEvent = (e) => {
+      this.parent.addEvent({
+        title: this.eventTitle.value,
+        description: this.eventDescription.value,
+        category: 'PERSONAL_LIFE',
+        icon: 'ring',
+        date: '06/28/2016',
+      })
+      e.target.reset()
+    }
+
+  </script>
+</add-event>

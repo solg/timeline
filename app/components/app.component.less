@@ -1,0 +1,39 @@
+app {
+
+  .main {
+
+  }
+
+  display: block;
+  font-family: sans-serif;
+  margin-left: 50px;
+  color: #666;
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .app-header {
+      background: #fafafa;
+      height: 50px;
+      border-bottom: 1px solid #e0e0e0;
+      line-height: 50px;
+      padding: 0 20px;
+    }
+
+    .app-content {
+      flex-grow: 1;
+      background: #f0f0f0;
+      padding: 20px;
+      overflow: auto;
+
+      .timeline-container {
+        width: 60%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+}

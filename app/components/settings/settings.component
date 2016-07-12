@@ -1,0 +1,37 @@
+require('./settings.component.less')
+
+<settings>
+
+  <div class="settings-component">
+    <h1>Settings</h1>
+    <h3>{ opts.title }</h3>
+    <div each={ items }>
+      { title }
+      <a onclick={ parent.remove }>Remove</a>
+    </div>
+    <form>
+      <input name="input" onkeyup={ edit }>
+      <button onclick={ addItem }>Add Item</button>
+    </form>
+  </div>
+
+  this.items = [ { title: 'First' }, { title: 'Second' } ]
+
+  edit(event) {
+    this.input = event.target
+  }
+
+  addItem(event) {
+    if(this.input.value) {
+      this.items.push({ title: this.input.value })
+      this.input.value = ''
+    }
+  }
+
+  remove(event) {
+    var item = event.item
+    var index = this.items.indexOf(item)
+    this.items.splice(index, 1)
+  }
+
+</settings>

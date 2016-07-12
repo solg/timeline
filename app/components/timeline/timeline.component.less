@@ -1,0 +1,47 @@
+
+  user-timeline-header {
+    margin-bottom: 50px;
+    display: block;
+  }
+
+  .timeline {
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    hr.vertically {
+      border: 1px solid #999;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      margin: 0;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 0 0 1em 0;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #999;
+        top: -5px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 2;
+        border-radius: 50%;
+      }
+    }
+  }

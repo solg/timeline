@@ -1,0 +1,14 @@
+// component style
+require('./timeline-entry.component.less')
+
+<timeline-entry>
+  <article class="timeline-entry { pull-left: opts.entry.align==='left', pull-right: opts.entry.align==='right' }" >
+    <div>
+      <p>{ opts.entry.title }</p>
+      <p>{ opts.entry.date }</p>
+    </div>
+    <div>
+      <i class="{ opts.entry.icon }"></i>
+    </div>
+  </article>
+</timeline-entry>

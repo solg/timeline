@@ -1,0 +1,13 @@
+// component style
+require('./app-header.component.less')
+
+<app-header>
+
+  <div>
+    App Header
+    <div class="menu-icon">
+      <i class="ion-android-menu"></i>
+    </div>
+  </div>
+
+</app-header>

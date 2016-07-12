@@ -1,0 +1,78 @@
+// component style
+require('./timeline.component.less')
+
+// child components
+require('./user-timeline-header/user-timeline-header.component')
+require('./timeline-entry/timeline-entry.component')
+
+<timeline>
+  <div class="timeline-container">
+    <div>
+      <user-timeline-header user={ user }></user-timeline-header>
+    </div>
+    <ul class="timeline">
+      <hr class="vertically">
+      <li each={entry in timeline }>
+        <timeline-entry entry={ entry }></timeline-entry>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+
+    const actions = require('../../actions/actions').default
+
+    let store = this.opts.store;
+
+    this.on('mount', () => {
+      store.dispatch(actions.loadTimeline());
+    })
+
+    store.subscribe(() => {
+      this.timeline = store.getState().timeline.timeline
+      this.setEvenOdd()
+      this.update();
+    })
+
+    this.showForm = false
+    this.user = {
+      name: 'German Solis',
+      email: 'german.gsl89@gmail.com',
+      avatar: '/images/default-user-avatar.svg'
+    }
+
+    this.timeline = [
+      //{ title: 'I got married', category: 'PERSONAL_LIFE', icon: 'ring', description: '', date: '06/28/2016' }
+    ]
+
+    this.toggleForm = (e) => {
+      this.showForm = !this.showForm
+      this.update()
+    }
+
+    this.cancelAddEvent = (e) => {
+      this.showForm = false
+      this.update()
+    }
+
+    this.addEvent = (entry) => {
+      store.dispatch(actions.addEntry(entry));
+
+      // let last = this.timeline[0], align = 'left'
+      // if (last) align = last.align === 'left' ? 'right' : 'left'
+      // entry.align = align
+      // this.timeline.unshift(entry)
+      // this.showForm = false
+      // this.update()
+    }
+
+    this.setEvenOdd = () => {
+      this.timeline.map((entry, i) => {
+        entry.align = i % 2 === 0 ? 'left' : 'right'
+      })
+      this.update()
+    }
+
+  </script>
+
+</timeline>
