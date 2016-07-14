@@ -1,12 +1,15 @@
 // component style
-require('./app.component.less')
+import style from './app.component.less'
 
 // child components
-require('./navbar/navbar.component')
-require('./app-header/app-header.component')
-require('./timeline/timeline.component')
-require('./profile/profile.component')
-require('./settings/settings.component')
+import navbar from './navbar/navbar.component'
+import appHeader from './app-header/app-header.component'
+import timeline from './timeline/timeline.component'
+import profile from './profile/profile.component'
+import settings from './settings/settings.component'
+
+// action dispatchers
+import actions from '../actions/actions'
 
 <app>
 
@@ -22,18 +25,16 @@ require('./settings/settings.component')
 
   <script>
 
-    const actions = require('../actions/actions').default //temporary work around
-
     let store = this.opts.store;
 
     this.on('mount', () => {
       //store.dispatch(anyAction);
-    })
+    });
 
     store.subscribe(() => {
       // this.state = store.getState();
       // this.update();
-    })
+    });
 
   </script>
 

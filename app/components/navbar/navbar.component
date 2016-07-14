@@ -1,5 +1,5 @@
 // component style
-require('./navbar.component.less')
+import style from  './navbar.component.less'
 
 <navbar>
 

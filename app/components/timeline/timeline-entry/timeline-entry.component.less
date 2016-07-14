@@ -3,12 +3,13 @@ timeline-entry {
 
   .timeline-entry {
     box-shadow: 0 2px .3em #ccc;
-    padding: 1.5em;
+    /* padding: 1.5em; */
     width: 47%;
     background-color: #fff;
     font-size: 90%;
     color: #777;
     position: relative;
+    display: flex;
 
     &:before, &:after {
       position: absolute;
@@ -20,8 +21,20 @@ timeline-entry {
       border-style: solid;
     }
 
+    .te-info {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .te-icon {
+      padding: 1rem 2rem;
+      font-size: 3.5rem;
+      background: #fafafa;
+    }
+
     &.pull-left {
       border-radius: 2px 0 2px 2px;
+      flex-direction: row-reverse;
 
       &:before {
         display: none;

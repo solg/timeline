@@ -1,13 +1,13 @@
 // component style
-require('./timeline-entry.component.less')
+import style from './timeline-entry.component.less'
 
 <timeline-entry>
   <article class="timeline-entry { pull-left: opts.entry.align==='left', pull-right: opts.entry.align==='right' }" >
-    <div>
+    <div class="te-info">
       <p>{ opts.entry.title }</p>
       <p>{ opts.entry.date }</p>
     </div>
-    <div>
+    <div class="te-icon">
       <i class="{ opts.entry.icon }"></i>
     </div>
   </article>

@@ -1,4 +1,4 @@
-require('./settings.component.less')
+import style from './settings.component.less'
 
 <settings>
 
@@ -17,18 +17,18 @@ require('./settings.component.less')
 
   this.items = [ { title: 'First' }, { title: 'Second' } ]
 
-  edit(event) {
+  this.edit = (event) => {
     this.input = event.target
   }
 
-  addItem(event) {
+  this.addItem = (event) => {
     if(this.input.value) {
       this.items.push({ title: this.input.value })
       this.input.value = ''
     }
   }
 
-  remove(event) {
+  this.remove = (event) => {
     var item = event.item
     var index = this.items.indexOf(item)
     this.items.splice(index, 1)

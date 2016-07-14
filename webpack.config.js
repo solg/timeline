@@ -8,11 +8,15 @@ config = {
         path: path.join(__dirname, 'app'),
         filename: 'bundle.js'
     },
-    plugins: [],
+    plugins: [
+        new webpack.ProvidePlugin({riot: 'riot'})
+    ],
     module: {
+        preLoaders: [
+            { test: /\.component$/, loader: 'riotjs', query: { type: 'none' }, exclude: /node_modules/ }
+        ],
         loaders: [
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-            { test: /\.component$/, loader: 'tag', exclude: /node_modules/ },
+            { test: /\.js$|\.component$/, loader: 'babel', exclude: /node_modules/ },
             { test: /\.css$/, loader: 'style!css', exclude: /node_modules/ },
             { test: /\.less$/, loader: 'style!css!less', exclude: /node_modules/ },
             {
@@ -21,6 +25,9 @@ config = {
                 exclude: /node_modules/
             }
         ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.component']
     }
 };
 

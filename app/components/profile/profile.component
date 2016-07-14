@@ -1,5 +1,5 @@
 // component style
-require('./profile.component.less')
+import style from './profile.component.less'
 
 <profile>
 

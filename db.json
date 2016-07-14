@@ -1,12 +1,36 @@
 {
   "timeline": [
     {
-      "title": "1st event",
-      "description": "Desc.",
-      "category": "PERSONAL_LIFE",
-      "icon": "event",
-      "date": "06/28/2016",
+      "title": "Sold house",
+      "description": "I sold my house",
+      "category": "FINANCIAL",
+      "icon": "ion-social-usd",
+      "date": "2016-07-01",
       "id": 1
+    },
+    {
+      "title": "moved",
+      "description": "I moved to another LA",
+      "category": "WORK",
+      "icon": "ion-briefcase",
+      "date": "2016-07-11",
+      "id": 2
+    },
+    {
+      "title": "Rented an apartment",
+      "description": "I rented an apartment",
+      "category": "PERSONAL_LIFE",
+      "icon": "ion-android-happy",
+      "date": "2016-07-12",
+      "id": 3
+    },
+    {
+      "title": "New job",
+      "description": "Started a new job",
+      "category": "WORK",
+      "icon": "ion-briefcase",
+      "date": "2016-07-13",
+      "id": 4
     }
   ]
 }

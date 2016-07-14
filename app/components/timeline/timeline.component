@@ -1,9 +1,12 @@
 // component style
-require('./timeline.component.less')
+import style from './timeline.component.less'
 
 // child components
-require('./user-timeline-header/user-timeline-header.component')
-require('./timeline-entry/timeline-entry.component')
+import userTimelineHeader from './user-timeline-header/user-timeline-header.component'
+import timelineEntry from './timeline-entry/timeline-entry.component'
+
+// action dispatchers
+import actions from '../../actions/actions'
 
 <timeline>
   <div class="timeline-container">
@@ -20,9 +23,7 @@ require('./timeline-entry/timeline-entry.component')
 
   <script>
 
-    const actions = require('../../actions/actions').default
-
-    let store = this.opts.store;
+    let store = this.opts.store
 
     this.on('mount', () => {
       store.dispatch(actions.loadTimeline());

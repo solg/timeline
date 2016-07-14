@@ -1,8 +1,8 @@
 // component style
-require('./user-timeline-header.component.less')
+import style from './user-timeline-header.component.less'
 
 // child components
-require('../add-event/add-event.component')
+import addEvent from '../add-event/add-event.component'
 
 <user-timeline-header>
 
