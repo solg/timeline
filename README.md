@@ -1,7 +1,7 @@
 # timeline
 Simple POC timeline of events Riot JS &amp; Redux.
 
-## Tech Stack
+### Tech Stack
 * Riot Js
 * Redux
 * Redux Thunk
