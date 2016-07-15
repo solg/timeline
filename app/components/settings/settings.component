@@ -1,5 +1,8 @@
 import style from './settings.component.less'
 
+// action dispatchers
+import actions from '../../actions/actions'
+
 <settings>
 
   <div class="settings-component">
@@ -14,6 +17,12 @@ import style from './settings.component.less'
       <button onclick={ addItem }>Add Item</button>
     </form>
   </div>
+
+  let store = this.opts.store
+
+  this.on('mount', () => {
+    store.dispatch(actions.setActiveNav('settings'))
+  })
 
   this.items = [ { title: 'First' }, { title: 'Second' } ]
 

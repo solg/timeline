@@ -41,6 +41,10 @@ const actions = {
         });
     }
 
+  },
+
+  setActiveNav (navKey) {
+    return { type: actionNames.SET_ACTIVE_NAV, data: navKey };
   }
 
 };

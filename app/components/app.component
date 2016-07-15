@@ -2,8 +2,10 @@
 import style from './app.component.less'
 
 // child components
-import navbar from './navbar/navbar.component'
-import appHeader from './app-header/app-header.component'
+import navbar from './common/navbar/navbar.component'
+import appHeader from './common/app-header/app-header.component'
+// component views
+import home from './home/home.component'
 import timeline from './timeline/timeline.component'
 import profile from './profile/profile.component'
 import settings from './settings/settings.component'
@@ -14,7 +16,7 @@ import actions from '../actions/actions'
 <app>
 
   <div class="main">
-    <navbar></navbar>
+    <navbar active={ activeNav }></navbar>
     <div class="main-container">
       <div class="app-header">
         <app-header></app-header>
@@ -32,8 +34,8 @@ import actions from '../actions/actions'
     });
 
     store.subscribe(() => {
-      // this.state = store.getState();
-      // this.update();
+      this.activeNav = store.getState().app.activeNav
+      this.update()
     });
 
   </script>

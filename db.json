@@ -55,6 +55,14 @@
       "icon": "ion-android-happy",
       "date": "2016-05-01",
       "id": 7
+    },
+    {
+      "title": "Bought a house",
+      "description": "Bought a new house",
+      "category": "MEDICAL",
+      "icon": "ion-medkit",
+      "date": "2016-07-14",
+      "id": 8
     }
   ]
 }

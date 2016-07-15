@@ -12,8 +12,9 @@ import style from  './app-menu.component.less'
   <script>
 
     this.menuItems = [
-      { text: 'Profile', icon: 'ion-android-person', url: 'profile' },
-      { text: 'Logout',  icon: 'ion-log-out',        url: '' }
+      { text: 'Profile',  icon: 'ion-android-person', url: 'profile' },
+      { text: 'Settings', icon: 'ion-ios-gear',       url: 'settings' },
+      { text: 'Logout',   icon: 'ion-log-out',        url: '' }
     ]
 
     this.goToPath = (e) => {

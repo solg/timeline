@@ -1,13 +1,13 @@
 // component style
-import style from './profile.component.less'
+import style from './home.component.less'
 
 // action dispatchers
 import actions from '../../actions/actions'
 
-<profile>
+<home>
 
-  <div class="profile-container">
-    <h1>User Profile!</h1>
+  <div class="home-container">
+    <h1>Home!</h1>
   </div>
 
   <script>
@@ -15,8 +15,9 @@ import actions from '../../actions/actions'
     let store = this.opts.store
 
     this.on('mount', () => {
-      store.dispatch(actions.setActiveNav('profile'))
+      store.dispatch(actions.setActiveNav('home'))
     })
 
   </script>
-</profile>
+
+</home>

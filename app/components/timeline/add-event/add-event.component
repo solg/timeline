@@ -33,7 +33,6 @@ import style from './add-event.component.less'
     }
 
     this.addEvent = (e) => {
-      console.log(this.eventCategory);
       this.parent.addEvent({
         title: this.eventTitle.value,
         description: this.eventDescription.value,
