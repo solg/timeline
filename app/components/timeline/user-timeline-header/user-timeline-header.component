@@ -17,7 +17,7 @@ import addEvent from '../add-event/add-event.component'
         <i class="{ ion-android-arrow-dropdown: !parent.showForm, ion-android-arrow-dropup: parent.showForm }"></i>
       </span>
     </div>
-    <div class="user-form" if={ parent.showForm }>
+    <div class="user-form" show={ parent.showForm }>
       <add-event></add-event>
     </div>
   </div>

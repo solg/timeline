@@ -1,0 +1,27 @@
+// component style
+import style from  './app-menu.component.less'
+
+<app-menu>
+  <div class="app-menu">
+    <a class="menu-item" each={ menuItems } href="#/{ url }" onclick={ goToPath }>
+      <i class="{ icon }"></i>
+      <span>{ text }</span>
+    </a>
+  </div>
+
+  <script>
+
+    this.menuItems = [
+      { text: 'Profile', icon: 'ion-android-person', url: 'profile' },
+      { text: 'Logout',  icon: 'ion-log-out',        url: '' }
+    ]
+
+    this.goToPath = (e) => {
+      e.stopPropagation()
+      this.parent.toggleMenu()
+      return true
+    }
+
+  </script>
+
+</app-menu>

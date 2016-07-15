@@ -3,7 +3,6 @@ timeline-entry {
 
   .timeline-entry {
     box-shadow: 0 2px .3em #ccc;
-    /* padding: 1.5em; */
     width: 47%;
     background-color: #fff;
     font-size: 90%;
@@ -24,12 +23,34 @@ timeline-entry {
     .te-info {
       padding: 1rem;
       flex-grow: 1;
+      h5 {
+        font-size: 1.5rem;
+        margin: 0 0 15px 0;
+        color: #666;
+        font-weight: 600;
+        text-rendering: geometricPrecision;
+        text-transform: capitalize;
+      }
+      .category {
+        background: #624CAB;
+        color: #fafafa;
+        padding: 2px 5px;
+        border-radius: 2px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+
+      .date {
+        float: right;
+      }
     }
 
     .te-icon {
       padding: 1rem 2rem;
       font-size: 3.5rem;
       background: #fafafa;
+      width: 70px;
+      text-align: center;
     }
 
     &.pull-left {
@@ -49,6 +70,18 @@ timeline-entry {
 
     &.pull-right {
       border-radius: 0 2px 2px 2px;
+
+      .te-info{
+        h5 {
+          text-align: right;
+        }
+        .category {
+          float: right;
+        }
+        .date {
+          float: left;
+        }
+      }
 
       &:after {
         display: none;

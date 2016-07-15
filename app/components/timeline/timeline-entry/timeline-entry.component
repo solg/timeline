@@ -4,8 +4,11 @@ import style from './timeline-entry.component.less'
 <timeline-entry>
   <article class="timeline-entry { pull-left: opts.entry.align==='left', pull-right: opts.entry.align==='right' }" >
     <div class="te-info">
-      <p>{ opts.entry.title }</p>
-      <p>{ opts.entry.date }</p>
+      <h5>{ opts.entry.title }</h5>
+      <div>
+        <span class="category">{ opts.entry.category.split('_').join(' ') }</span>
+        <span class="date">{ opts.entry.date }</span>
+      </div>
     </div>
     <div class="te-icon">
       <i class="{ opts.entry.icon }"></i>

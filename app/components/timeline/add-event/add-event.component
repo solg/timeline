@@ -7,11 +7,11 @@ import style from './add-event.component.less'
     <input id="eventTitle" type="text" placeholder="Title" class="form-control">
     <input id="eventDescription" type="text" placeholder="Description" class="form-control">
     <select id="eventCategory" class="form-control">
-      <option value="" selected>select category</option>
+      <option value="" selected>- select category -</option>
       <option each={ categoryOpts } value="{ value }">{ text }</option>
     </select>
     <input id="eventDate" type="date" placeholder="Date" class="form-control">
-    <button type="submit" class="btn btn-default"> Add </button>
+    <button type="submit" class="btn btn-default pull-right"> Add </button>
   </form>
 
   <script>

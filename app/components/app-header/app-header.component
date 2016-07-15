@@ -1,13 +1,28 @@
 // component style
 import style from './app-header.component.less'
 
+// child components
+import appMenu from '../app-menu/app-menu.component'
+
 <app-header>
 
   <div>
     App Header
-    <div class="menu-icon">
+    <div class="menu-icon {menu-open: showMenu}" onclick={ toggleMenu }>
       <i class="ion-android-menu"></i>
+      <div show={ showMenu }>
+        <app-menu></app-menu>
+      </div>
     </div>
   </div>
+
+  <script>
+    this.showMenu = false
+
+    this.toggleMenu = (e) => {
+      this.showMenu = !this.showMenu
+      this.update()
+    }
+  </script>
 
 </app-header>
