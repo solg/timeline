@@ -1,4 +1,4 @@
-# timeline
+# Timeline
 Simple POC timeline of events Riot JS &amp; Redux.
 
 ## Tech Stack
@@ -11,7 +11,7 @@ Simple POC timeline of events Riot JS &amp; Redux.
 * ES6
 * Node Js
 
-
+### Commands
 `npm install`
 
 `npm start`
