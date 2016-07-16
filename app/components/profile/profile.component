@@ -6,8 +6,16 @@ import actions from '../../actions/actions'
 
 <profile>
 
-  <div class="profile-container">
-    <h1>User Profile!</h1>
+  <div class="profile-container container">
+    <div class="row">
+      <div class="profile-content col-md-8 col-xs-12">
+        <img src="{ user.avatar }" />
+        <h3>German Solis</h3>
+        <div class="profile-info">
+          <div each={ key, value in user }> <span>{ key }</span> <span>{ value }</span> </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -17,6 +25,12 @@ import actions from '../../actions/actions'
     this.on('mount', () => {
       store.dispatch(actions.setActiveNav('profile'))
     })
+
+    this.user = {
+      name: 'German Solis',
+      email: 'german.gsl89@gmail.com',
+      avatar: '/images/default-user-avatar.svg'
+    }
 
   </script>
 </profile>
