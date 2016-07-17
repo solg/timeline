@@ -3,7 +3,31 @@ import actionNames from './action-names'
 
 const baseUrl = 'http://localhost:3000';
 
+let serverUser = { username: 'gsolis', password: 'g50l15' };
+
 const actions = {
+
+  login (loginData) {
+    return (dispatch, getState) => {
+      setTimeout(() => {
+        if(loginData.username === serverUser.username && loginData.password === serverUser.password)
+          dispatch(loginSuccess())
+        else
+          dispatch(tempToast({msg: 'Login failed.', type: 'ERROR', timeout: 1500 }));
+      }, 1500);
+      //dispatch(toggleLoading(true));
+
+      // axios.post(`${baseUrl}/login`, loginData)
+      //   .then((response) => {
+      //     dispatch(tempToast({msg: 'Timeline successfully loaded.', type: 'SUCCESS', timeout: 1500 }));
+      //     dispatch(toggleLoading(false));
+      //   })
+      //   .catch((err) => {
+      //     dispatch(tempToast({msg: err, type: 'ERROR', timeout: 1500 }));
+      //     dispatch(toggleLoading(false));
+      //   });
+    }
+  },
 
   loadTimeline () {
 
@@ -45,9 +69,17 @@ const actions = {
 
   setActiveNav (navKey) {
     return { type: actionNames.SET_ACTIVE_NAV, data: navKey };
+  },
+
+  logout () {
+    return { type: actionNames.LOGOUT };
   }
 
 };
+
+function loginSuccess () {
+  return { type: actionNames.LOGIN_SUCCESS, data: true };
+}
 
 function timelineLoaded (timelineEntries) {
   return { type: actionNames.TIMELINE_LOADED, data: timelineEntries };
@@ -57,20 +89,20 @@ function entryAdded (entry) {
   return { type: actionNames.ENTRY_ADDED, data: entry };
 }
 
-function showMsg (data) {
-  return { type: actionNames.SHOW_MSG, data: data };
+function showToast (data) {
+  return { type: actionNames.SHOW_TOAST, data: data };
 }
 
-function hideMsg () {
-  return { type: actionNames.HIDE_MSG };
+function hideToast () {
+  return { type: actionNames.HIDE_TOAST };
 }
 
-function tempToast (msgData) {
+function tempToast (toast) {
   return (dispatch, getState) => {
-    dispatch(showMsg(msgData));
+    dispatch(showToast(toast));
     setTimeout(() => {
-      dispatch(hideMsg());
-    }, msgData.timeout)
+      dispatch(hideToast());
+    }, toast.timeout)
   }
 }
 

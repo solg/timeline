@@ -1,0 +1,21 @@
+// component style
+import style from './logout.component.less'
+
+// action dispatchers
+import actions from '../../actions/actions'
+
+<logout>
+  <div>
+    <h3>Login Out ...</h3>
+  </div>
+
+    let store = this.opts.store
+
+    this.on('mount', () => {
+      store.dispatch(actions.logout())
+    })
+
+  <script>
+
+  </script>
+</logout>

@@ -5,10 +5,12 @@ import style from './app.component.less'
 import navbar from './common/navbar/navbar.component'
 import appHeader from './common/app-header/app-header.component'
 // component views
+import login from './login/login.component'
 import home from './home/home.component'
 import timeline from './timeline/timeline.component'
 import profile from './profile/profile.component'
 import settings from './settings/settings.component'
+import logout from './logout/logout.component'
 
 // action dispatchers
 import actions from '../actions/actions'
@@ -34,6 +36,11 @@ import actions from '../actions/actions'
     });
 
     store.subscribe(() => {
+
+      if (store.getState().app.isLoggedIn && window.location.hash === '#login') {
+        riot.route('');
+      }
+
       this.activeNav = store.getState().app.activeNav
       this.update()
     });

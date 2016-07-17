@@ -1,35 +1,50 @@
-import Riot from 'riot'
-import store from '../store/store'
+//import Riot from 'riot'
+//import store from '../store/store'
 
 let currentView = null;
 
 export default {
-    home: (id, action) => {
+    login: (id, action, store) => {
       if (currentView)
         currentView.unmount(true);
 
-      currentView = Riot.mount('#view', 'home', { store: store })[0];
+      currentView = riot.mount('#view', 'login', { store: store })[0];
     },
-    timeline: (id, action) => {
+    home: (id, action, store) => {
       if (currentView)
         currentView.unmount(true);
 
-      currentView = Riot.mount('#view', 'timeline', { store: store })[0];
+      currentView = riot.mount('#view', 'home', { store: store })[0];
     },
-    profile: (id, action) => {
+    timeline: (id, action, store) => {
       if (currentView)
         currentView.unmount(true);
 
-      currentView = Riot.mount('#view', 'profile', { store: store })[0];
+      currentView = riot.mount('#view', 'timeline', { store: store })[0];
+    },
+    profile: (id, action, store) => {
+      if (currentView)
+        currentView.unmount(true);
+
+      currentView = riot.mount('#view', 'profile', { store: store })[0];
       // switch (action) {
       //   case 'detail':
       //     var currentPage = Riot.mount('#view', 'people-detail', { person: params.people[id] });
       // }
     },
-    settings: (id, action) => {
+    settings: (id, action, store) => {
       if (currentView)
         currentView.unmount(true);
 
-      currentView = Riot.mount('#view', 'settings', { store: store })[0];
+      currentView = riot.mount('#view', 'settings', { store: store })[0];
+    },
+    logout: (id, action, store) => {
+      if (currentView)
+        currentView.unmount(true);
+
+      currentView = riot.mount('#view', 'logout', { store: store })[0];
+      setTimeout(() => {
+        riot.route('login');
+      }, 1500);
     }
 };

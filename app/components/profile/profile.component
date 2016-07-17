@@ -12,7 +12,9 @@ import actions from '../../actions/actions'
         <img src="{ user.avatar }" />
         <h3>German Solis</h3>
         <div class="profile-info">
-          <div each={ key, value in user }> <span>{ key }</span> <span>{ value }</span> </div>
+          <div each={ key, value in user } class="row-info" if={ key !== 'avatar' }>
+            <span class="key">{ key }</span> <span class="val">{ value }</span>
+          </div>
         </div>
       </div>
     </div>
@@ -27,9 +29,11 @@ import actions from '../../actions/actions'
     })
 
     this.user = {
-      name: 'German Solis',
+      avatar: '/images/default-user-avatar.svg',
       email: 'german.gsl89@gmail.com',
-      avatar: '/images/default-user-avatar.svg'
+      age: '27 years old',
+      dob: 'Apr 14th, 1989',
+      address: '1234 Street One, Tx. 75039'
     }
 
   </script>
