@@ -8,7 +8,7 @@ import appMenu from '../app-menu/app-menu.component'
 
   <div>
     App Header
-    <div class="menu-icon {menu-open: showMenu}" onclick={ toggleMenu }>
+    <div class="menu-icon {menu-open: showMenu}" onclick={ toggleMenu } if={ isLoggedIn }>
       <i class="ion-android-menu"></i>
       <div show={ showMenu }>
         <app-menu></app-menu>
@@ -17,12 +17,20 @@ import appMenu from '../app-menu/app-menu.component'
   </div>
 
   <script>
+
+    let store = this.opts.store
     this.showMenu = false
+
+    store.subscribe(() => {
+      this.isLoggedIn = store.getState().app.isLoggedIn
+      this.update()
+    })
 
     this.toggleMenu = (e) => {
       this.showMenu = !this.showMenu
       this.update()
     }
+
   </script>
 
 </app-header>

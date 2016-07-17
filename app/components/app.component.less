@@ -1,13 +1,14 @@
 app {
 
-  .main {
-
-  }
-
   display: block;
   font-family: sans-serif;
-  margin-left: 50px;
   color: #666;
+
+  .main {
+    &.logged-in {
+      margin-left: 50px;
+    }
+  }
 
   .main-container {
     display: flex;

@@ -17,11 +17,11 @@ import actions from '../actions/actions'
 
 <app>
 
-  <div class="main">
-    <navbar active={ activeNav }></navbar>
+  <div class="main { logged-in: isLoggedIn }">
+    <navbar active={ activeNav } if={ isLoggedIn }></navbar>
     <div class="main-container">
       <div class="app-header">
-        <app-header></app-header>
+        <app-header store={ opts.store }></app-header>
       </div>
       <div class="app-content" id="view"></div>
     </div>
@@ -33,17 +33,17 @@ import actions from '../actions/actions'
 
     this.on('mount', () => {
       //store.dispatch(anyAction);
-    });
+    })
 
     store.subscribe(() => {
-
-      if (store.getState().app.isLoggedIn && window.location.hash === '#login') {
+      this.isLoggedIn = store.getState().app.isLoggedIn
+      if (this.isLoggedIn && window.location.hash === '#login') {
         riot.route('');
       }
 
       this.activeNav = store.getState().app.activeNav
       this.update()
-    });
+    })
 
   </script>
 

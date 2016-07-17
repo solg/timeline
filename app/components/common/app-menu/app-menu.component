@@ -19,7 +19,6 @@ import style from  './app-menu.component.less'
 
     this.goToPath = (e) => {
       e.stopPropagation()
-      console.log(e.item)
       this.parent.toggleMenu()
       return true
     }
