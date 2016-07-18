@@ -4,6 +4,7 @@ import actionNames from '../actions/action-names'
 let initialState = {
   isLoggedIn: false,
   activeNav: 'home',
+  isLoading: false,
   toast: null
  };
 
@@ -21,6 +22,10 @@ const appReducer = (state = initialState, action) => {
 
     case actionNames.SET_ACTIVE_NAV:
         return Object.assign({}, state, { activeNav: action.data });
+      break;
+
+    case actionNames.TOGGLE_LOADING:
+        return Object.assign({}, state, { isLoading: action.data });
       break;
 
     case actionNames.SHOW_TOAST:

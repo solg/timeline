@@ -10,15 +10,21 @@ import actions from '../../actions/actions'
       <h3>Login</h3>
       <input id="username" type="text" placeholder="Username" class="form-control">
       <input id="password" type="password" placeholder="Password" class="form-control">
-      <button type="submit" class="btn btn-default pull-right"> Login </button>
+      <button type="submit" class="btn btn-default pull-right"> { btnText } </button>
     </form>
   </div>
 
   <script>
     let store = this.opts.store
 
+    this.btnText = 'Login'
     this.on('mount', () => {
       store.dispatch(actions.setActiveNav('login'))
+    })
+
+    store.subscribe(() => {
+      this.btnText = store.getState().app.isLoading ? 'Signing In...' : 'Login'
+      this.update()
     })
 
     this.login = (e) => {

@@ -9,11 +9,17 @@ const actions = {
 
   login (loginData) {
     return (dispatch, getState) => {
+      dispatch(toggleLoading(true));
+
       setTimeout(() => {
-        if(loginData.username === serverUser.username && loginData.password === serverUser.password)
-          dispatch(loginSuccess())
-        else
+        if(loginData.username === serverUser.username && loginData.password === serverUser.password) {
+          dispatch(loginSuccess());
+          dispatch(toggleLoading(false));
+        }
+        else {
           dispatch(tempToast({text: 'Login failed.', type: 'ERROR', timeout: 5000 }));
+          dispatch(toggleLoading(false));
+        }
       }, 1500);
       //dispatch(toggleLoading(true));
 
