@@ -17,5 +17,5 @@ Simple POC timeline of events Riot JS &amp; Redux.
 `npm start`
 
 #### Login Info
-user: gsolis
-pass: 12345
+* user: gsolis
+* pass: 12345
