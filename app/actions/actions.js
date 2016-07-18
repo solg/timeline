@@ -3,7 +3,7 @@ import actionNames from './action-names'
 
 const baseUrl = 'http://localhost:3000';
 
-let serverUser = { username: 'gsolis', password: 'g50l15' };
+let serverUser = { username: 'gsolis', password: '12345' };
 
 const actions = {
 
