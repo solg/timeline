@@ -63,6 +63,14 @@
       "icon": "ion-medkit",
       "date": "2016-07-14",
       "id": 8
+    },
+    {
+      "title": "Had a son",
+      "description": "new child",
+      "category": "PERSONAL_LIFE",
+      "icon": "ion-android-happy",
+      "date": "2016-07-17",
+      "id": 9
     }
   ]
 }

@@ -4,7 +4,6 @@ import actionNames from '../actions/action-names'
 let initialState = {
   isLoggedIn: false,
   activeNav: 'home',
-  showToast: false,
   toast: null
  };
 
@@ -25,11 +24,11 @@ const appReducer = (state = initialState, action) => {
       break;
 
     case actionNames.SHOW_TOAST:
-        return Object.assign({}, state, { showToast: true, toast: action.data });
+        return Object.assign({}, state, { toast: action.data });
       break;
 
     case actionNames.HIDE_TOAST:
-        return Object.assign({}, state, { showToast: false });
+        return Object.assign({}, state, { toast: null });
       break;
 
     default:

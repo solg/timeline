@@ -13,17 +13,17 @@ const actions = {
         if(loginData.username === serverUser.username && loginData.password === serverUser.password)
           dispatch(loginSuccess())
         else
-          dispatch(tempToast({msg: 'Login failed.', type: 'ERROR', timeout: 1500 }));
+          dispatch(tempToast({text: 'Login failed.', type: 'ERROR', timeout: 5000 }));
       }, 1500);
       //dispatch(toggleLoading(true));
 
       // axios.post(`${baseUrl}/login`, loginData)
       //   .then((response) => {
-      //     dispatch(tempToast({msg: 'Timeline successfully loaded.', type: 'SUCCESS', timeout: 1500 }));
+      //     dispatch(tempToast({text: 'Timeline successfully loaded.', type: 'SUCCESS', timeout: 1500 }));
       //     dispatch(toggleLoading(false));
       //   })
       //   .catch((err) => {
-      //     dispatch(tempToast({msg: err, type: 'ERROR', timeout: 1500 }));
+      //     dispatch(tempToast({text: err, type: 'ERROR', timeout: 1500 }));
       //     dispatch(toggleLoading(false));
       //   });
     }
@@ -37,11 +37,11 @@ const actions = {
       axios.get(`${baseUrl}/timeline`)
         .then((response) => {
           dispatch(timelineLoaded(response.data));
-          dispatch(tempToast({msg: 'Timeline successfully loaded.', type: 'SUCCESS', timeout: 1500 }));
+          dispatch(tempToast({text: 'Timeline successfully loaded.', type: 'SUCCESS', timeout: 5000 }));
           dispatch(toggleLoading(false));
         })
         .catch((err) => {
-          dispatch(tempToast({msg: err, type: 'ERROR', timeout: 1500 }));
+          dispatch(tempToast({text: err, type: 'ERROR', timeout: 5000 }));
           dispatch(toggleLoading(false));
         });
     }
@@ -56,11 +56,11 @@ const actions = {
       axios.post(`${baseUrl}/timeline`, entry)
         .then((response) => {
           dispatch(entryAdded(response.data));
-          dispatch(tempToast({msg: 'Entry successfully added.', type: 'SUCCESS', timeout: 1500 }));
+          dispatch(tempToast({text: 'Entry successfully added.', type: 'INFO', timeout: 5000 }));
           dispatch(toggleLoading(false));
         })
         .catch((err) => {
-          dispatch(tempToast({msg: err, type: 'ERROR', timeout: 1500 }));
+          dispatch(tempToast({text: err, type: 'ERROR', timeout: 5000 }));
           dispatch(toggleLoading(false));
         });
     }

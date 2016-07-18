@@ -7,32 +7,37 @@ app {
   .main {
     &.logged-in {
       margin-left: 50px;
-    }
-  }
 
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-
-    .app-header {
-      background: #fafafa;
-      height: 50px;
-      border-bottom: 1px solid #e0e0e0;
-      line-height: 50px;
-      padding: 0 20px;
+      .app-header {
+        background: #fafafa !important;
+      }
     }
 
-    .app-content {
-      flex-grow: 1;
-      background: #f0f0f0;
-      padding: 20px;
-      overflow: auto;
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
 
-      .timeline-container {
-        width: 60%;
-        margin: 0 auto;
-        display: block;
+      .app-header {
+        background: #fff;
+        height: 50px;
+        border-bottom: 1px solid #e0e0e0;
+        line-height: 50px;
+        padding: 0 20px;
+      }
+
+      .app-content {
+        flex-grow: 1;
+        background: #f0f0f0;
+        padding: 20px;
+        overflow: auto;
+        position: relative;
+
+        .timeline-container {
+          width: 60%;
+          margin: 0 auto;
+          display: block;
+        }
       }
     }
   }

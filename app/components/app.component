@@ -4,6 +4,7 @@ import style from './app.component.less'
 // child components
 import navbar from './common/navbar/navbar.component'
 import appHeader from './common/app-header/app-header.component'
+import toast from './common/toast/toast'
 // component views
 import login from './login/login.component'
 import home from './home/home.component'
@@ -16,7 +17,7 @@ import logout from './logout/logout.component'
 import actions from '../actions/actions'
 
 <app>
-
+  <toast toast={ toast }></toast>
   <div class="main { logged-in: isLoggedIn }">
     <navbar active={ activeNav } if={ isLoggedIn }></navbar>
     <div class="main-container">
@@ -36,6 +37,8 @@ import actions from '../actions/actions'
     })
 
     store.subscribe(() => {
+      this.toast = store.getState().app.toast
+
       this.isLoggedIn = store.getState().app.isLoggedIn
       if (this.isLoggedIn && window.location.hash === '#login') {
         riot.route('');

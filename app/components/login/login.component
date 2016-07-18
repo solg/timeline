@@ -5,13 +5,16 @@ import style from './login.component.less'
 import actions from '../../actions/actions'
 
 <login>
-  <form onsubmit={ login }>
-    <h3>Login</h3>
-    <input id="username" type="text" placeholder="Username" class="form-control">
-    <input id="password" type="password" placeholder="Password" class="form-control">
-    <button type="submit" class="btn btn-default pull-right"> Login </button>
-  </form>
+  <div class="login-container">
+    <form onsubmit={ login }>
+      <h3>Login</h3>
+      <input id="username" type="text" placeholder="Username" class="form-control">
+      <input id="password" type="password" placeholder="Password" class="form-control">
+      <button type="submit" class="btn btn-default pull-right"> Login </button>
+    </form>
+  </div>
 
+  <script>
     let store = this.opts.store
 
     this.on('mount', () => {
@@ -19,11 +22,10 @@ import actions from '../../actions/actions'
     })
 
     this.login = (e) => {
-      console.log('Logging in...')
-      store.dispatch(actions.login({ username: this.username.value, password: this.password.value }))
+      store.dispatch(actions.login({
+        username: this.username.value,
+        password: this.password.value
+      }))
     }
-
-  <script>
-
   </script>
 </login>

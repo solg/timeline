@@ -1,0 +1,38 @@
+@success-color: #7bab2e;
+@info-color: #42a5f5;
+@warning-color: #ff7043;
+@error-color: #ef4f52;
+
+.customize (@color) {
+  background: @color;
+  box-shadow: 0px 2px 0px darken(@color, 15%);
+}
+
+.toast{
+  position: absolute;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  top: 51px;
+  right: 20px;
+  z-index: 2;
+  border-radius: 2px;
+  font-size: 1.6rem;
+
+  &.success {
+    .customize(@success-color)
+  }
+
+  &.info {
+    .customize(@info-color)
+  }
+
+  &.warning {
+    .customize(@warning-color)
+  }
+
+  &.error {
+    .customize(@error-color)
+  }
+
+}
