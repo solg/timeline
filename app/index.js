@@ -1,4 +1,3 @@
-import Riot from 'riot'
 
 import bootstrap from './libs/bootstrap/dist/css/bootstrap.css'
 import ionicons from './libs/ionicons/css/ionicons.css'
@@ -12,7 +11,7 @@ import app from './components/app.component'
 
 (() => {
 
-  Riot.mount('app', { store: store });
+  riot.mount('app', { store: store });
   routeHandler();
 
 })();

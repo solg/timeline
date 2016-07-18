@@ -1,6 +1,5 @@
-//import Riot from 'riot'
-import routes from './routes'
 
+import routes from './routes'
 import store from '../store/store'
 
 riot.route.stop(); // clear all the old Riot.route callbacks

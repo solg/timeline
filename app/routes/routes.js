@@ -1,5 +1,3 @@
-//import Riot from 'riot'
-//import store from '../store/store'
 
 let currentView = null;
 
