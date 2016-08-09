@@ -12,9 +12,8 @@ let handler = (collection, id, action) => {
     return;
   }
 
-  let fn = routes[collection || 'home']; // { home: function(){} } //collection = home
+  let fn = routes[collection || 'home']; // { home: function(){} } //collection = home | login | timeline | etc
   return fn ? fn(id, action, store) : console.error('no route found : ', collection, id, action);
-
 };
 
 export default () => {

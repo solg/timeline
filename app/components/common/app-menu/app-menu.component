@@ -2,6 +2,7 @@
 import style from  './app-menu.component.less'
 
 <app-menu>
+
   <div class="app-menu">
     <a class="menu-item" each={ menuItems } href="#/{ url }" onclick={ goToPath }>
       <i class="{ icon }"></i>
@@ -10,7 +11,6 @@ import style from  './app-menu.component.less'
   </div>
 
   <script>
-
     this.menuItems = [
       { text: 'Profile',  icon: 'ion-android-person', url: 'profile' },
       { text: 'Settings', icon: 'ion-ios-gear',       url: 'settings' },
@@ -22,7 +22,6 @@ import style from  './app-menu.component.less'
       this.parent.toggleMenu()
       return true
     }
-
   </script>
 
 </app-menu>

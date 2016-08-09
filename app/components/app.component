@@ -2,21 +2,22 @@
 import style from './app.component.less'
 
 // child components
-import navbar from './common/navbar/navbar.component'
-import appHeader from './common/app-header/app-header.component'
+import navbar from './common/navbar/navbar'
+import appHeader from './common/app-header/app-header'
 import toast from './common/toast/toast'
 // component views
-import login from './login/login.component'
-import home from './home/home.component'
-import timeline from './timeline/timeline.component'
-import profile from './profile/profile.component'
-import settings from './settings/settings.component'
-import logout from './logout/logout.component'
+import login from './login/login'
+import home from './home/home'
+import timeline from './timeline/timeline'
+import profile from './profile/profile'
+import settings from './settings/settings'
+import logout from './logout/logout'
 
 // action dispatchers
 import actions from '../actions/actions'
 
 <app>
+
   <toast toast={ toast }></toast>
   <div class="main { logged-in: isLoggedIn }">
     <navbar active={ activeNav } if={ isLoggedIn }></navbar>
@@ -29,7 +30,6 @@ import actions from '../actions/actions'
   </div>
 
   <script>
-
     let store = this.opts.store;
 
     this.on('mount', () => {
@@ -47,7 +47,6 @@ import actions from '../actions/actions'
       this.activeNav = store.getState().app.activeNav
       this.update()
     })
-
   </script>
 
 </app>

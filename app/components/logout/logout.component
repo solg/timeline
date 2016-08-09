@@ -5,17 +5,17 @@ import style from './logout.component.less'
 import actions from '../../actions/actions'
 
 <logout>
+
   <div>
     <h3>Login Out ...</h3>
   </div>
 
+  <script>
     let store = this.opts.store
 
     this.on('mount', () => {
       store.dispatch(actions.logout())
     })
-
-  <script>
-
   </script>
+
 </logout>

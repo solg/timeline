@@ -5,6 +5,7 @@ import style from './login.component.less'
 import actions from '../../actions/actions'
 
 <login>
+
   <div class="login-container">
     <form onsubmit={ login }>
       <h3>Login</h3>
@@ -34,4 +35,5 @@ import actions from '../../actions/actions'
       }))
     }
   </script>
+
 </login>

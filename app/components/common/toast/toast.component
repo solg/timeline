@@ -2,19 +2,13 @@
 import style from  './toast.component.less'
 
 <toast>
+
   <div class="toast { toastType() }" show={ show }>
     <div> { opts.toast.text } </div>
     <div></div>
   </div>
 
   <script>
-
-    //this.toasts = []
-    //this.toast = { text: 'Hello' } //null
-
-    // setTimeout(() => {
-    //   this.toast = { text: 'Hello' }
-    // }, 5000)
     this.on('update', () => {
       this.show = this.opts.toast ? true : false
     })
@@ -23,7 +17,6 @@ import style from  './toast.component.less'
     this.toastType = () => {
       return typeToClsMapping[this.opts.toast.type]
     }
-
   </script>
 
 </toast>

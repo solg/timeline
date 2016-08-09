@@ -2,7 +2,7 @@
 import style from './user-timeline-header.component.less'
 
 // child components
-import addEvent from '../add-event/add-event.component'
+import addEvent from '../add-event/add-event'
 
 <user-timeline-header>
 
@@ -23,11 +23,9 @@ import addEvent from '../add-event/add-event.component'
   </div>
 
   <script>
-
     this.addEvent = (entry) => {
       this.parent.addEvent(entry)
     }
-
   </script>
 
 </user-timeline-header>

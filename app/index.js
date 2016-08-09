@@ -1,7 +1,7 @@
 
 import bootstrap from './libs/bootstrap/dist/css/bootstrap.css'
 import ionicons from './libs/ionicons/css/ionicons.css'
-import main from './main.less'
+import mainStyle from './main.less'
 
 import routeHandler from './routes/route-handler'
 import store from './store/store'

@@ -2,6 +2,7 @@
 import style from './timeline-entry.component.less'
 
 <timeline-entry>
+
   <article class="timeline-entry { pull-left: opts.entry.align==='left', pull-right: opts.entry.align==='right' }" >
     <div class="te-info">
       <h5>{ opts.entry.title }</h5>
@@ -14,4 +15,5 @@ import style from './timeline-entry.component.less'
       <i class="{ opts.entry.icon }"></i>
     </div>
   </article>
+  
 </timeline-entry>

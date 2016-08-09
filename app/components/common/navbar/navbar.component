@@ -9,7 +9,6 @@ import style from  './navbar.component.less'
   </a>
 
   <script>
-
     this.navLinks = [
       { text: 'Home',     icon: 'ion-ios-home',         url: '', key: 'home' },
       { text: 'Timeline', icon: 'ion-ios-pulse-strong', url: 'timeline', key: 'timeline' }
@@ -18,7 +17,6 @@ import style from  './navbar.component.less'
     this.on('update', () => {
       this.active = opts.active
     })
-
   </script>
 
 </navbar>

@@ -8,6 +8,7 @@ let serverUser = { username: 'gsolis', password: '12345' };
 const actions = {
 
   login (loginData) {
+
     return (dispatch, getState) => {
       dispatch(toggleLoading(true));
 
@@ -33,6 +34,7 @@ const actions = {
       //     dispatch(toggleLoading(false));
       //   });
     }
+
   },
 
   loadTimeline () {

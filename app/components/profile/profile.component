@@ -21,7 +21,6 @@ import actions from '../../actions/actions'
   </div>
 
   <script>
-
     let store = this.opts.store
 
     this.on('mount', () => {
@@ -35,6 +34,6 @@ import actions from '../../actions/actions'
       dob: 'Apr 14th, 1989',
       address: '1234 Street One, Tx. 75039'
     }
-
   </script>
+  
 </profile>

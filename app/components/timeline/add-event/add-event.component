@@ -2,6 +2,7 @@
 import style from './add-event.component.less'
 
 <add-event>
+
   <form onsubmit={ addEvent }>
     <h3>New Event</h3>
     <input id="eventTitle" type="text" placeholder="Title" class="form-control">
@@ -15,7 +16,6 @@ import style from './add-event.component.less'
   </form>
 
   <script>
-
     this.categoryOpts = [
       { value: 'PERSONAL_LIFE', text: 'Personal Life' },
       { value: 'WORK', text: 'Work' },
@@ -42,6 +42,6 @@ import style from './add-event.component.less'
       })
       e.target.reset()
     }
-
   </script>
+  
 </add-event>

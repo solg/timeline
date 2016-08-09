@@ -18,29 +18,31 @@ import actions from '../../actions/actions'
     </form>
   </div>
 
-  let store = this.opts.store
+  <script>
+    let store = this.opts.store
 
-  this.on('mount', () => {
-    store.dispatch(actions.setActiveNav('settings'))
-  })
+    this.on('mount', () => {
+      store.dispatch(actions.setActiveNav('settings'))
+    })
 
-  this.items = [ { title: 'First' }, { title: 'Second' } ]
+    this.items = [ { title: 'First' }, { title: 'Second' } ]
 
-  this.edit = (event) => {
-    this.input = event.target
-  }
-
-  this.addItem = (event) => {
-    if(this.input.value) {
-      this.items.push({ title: this.input.value })
-      this.input.value = ''
+    this.edit = (event) => {
+      this.input = event.target
     }
-  }
 
-  this.remove = (event) => {
-    var item = event.item
-    var index = this.items.indexOf(item)
-    this.items.splice(index, 1)
-  }
+    this.addItem = (event) => {
+      if(this.input.value) {
+        this.items.push({ title: this.input.value })
+        this.input.value = ''
+      }
+    }
+
+    this.remove = (event) => {
+      var item = event.item
+      var index = this.items.indexOf(item)
+      this.items.splice(index, 1)
+    }
+  </script>
 
 </settings>

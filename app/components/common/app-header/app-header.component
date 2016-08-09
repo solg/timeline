@@ -17,7 +17,6 @@ import appMenu from '../app-menu/app-menu.component'
   </div>
 
   <script>
-
     let store = this.opts.store
     this.showMenu = false
 
@@ -30,7 +29,6 @@ import appMenu from '../app-menu/app-menu.component'
       this.showMenu = !this.showMenu
       this.update()
     }
-
   </script>
 
 </app-header>
