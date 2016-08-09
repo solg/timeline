@@ -6,8 +6,10 @@ import actions from '../../actions/actions'
 
 <logout>
 
-  <div>
-    <h3>Login Out ...</h3>
+  <div class="logout-container">
+    <div class="center-box">
+      <h3>Login Out ...</h3>
+    </div>
   </div>
 
   <script>

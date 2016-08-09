@@ -7,15 +7,12 @@ import actions from '../../actions/actions'
 
   <div class="settings-component">
     <h1>Settings</h1>
-    <h3>{ opts.title }</h3>
-    <div each={ items }>
-      { title }
-      <a onclick={ parent.remove }>Remove</a>
+    <div class="settings-box">
+      <div class="setting-row" each={ settings }>
+        <div>{ title }</div>
+        <div> <input type="checkbox" checked="{ active }" /> </div>
+      </div>
     </div>
-    <form>
-      <input name="input" onkeyup={ edit }>
-      <button onclick={ addItem }>Add Item</button>
-    </form>
   </div>
 
   <script>
@@ -25,24 +22,12 @@ import actions from '../../actions/actions'
       store.dispatch(actions.setActiveNav('settings'))
     })
 
-    this.items = [ { title: 'First' }, { title: 'Second' } ]
-
-    this.edit = (event) => {
-      this.input = event.target
-    }
-
-    this.addItem = (event) => {
-      if(this.input.value) {
-        this.items.push({ title: this.input.value })
-        this.input.value = ''
-      }
-    }
-
-    this.remove = (event) => {
-      var item = event.item
-      var index = this.items.indexOf(item)
-      this.items.splice(index, 1)
-    }
+    this.settings = [
+      { title: 'App Setting 1', active: false },
+      { title: 'App Setting 2', active: true },
+      { title: 'App Setting 3', active: false },
+      { title: 'App Setting 4', active: true }
+    ]
   </script>
 
 </settings>
